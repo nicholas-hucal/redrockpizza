@@ -1,0 +1,89 @@
+@mixin tablet {
+  @media (min-width: 769px) {
+    @content;
+  }
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 2rem 0;
+    width: 100%;
+    color: #dc3545;
+  }
+
+  &__container {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+  }
+
+  &__line {
+    border-top: 2px solid #000000;
+    flex: 1;
+    margin: 0 0.5rem;
+
+    @include tablet() {
+      margin: 0 2rem;
+    }
+  }
+
+  &__logo {
+    width: 10rem;
+  }
+
+  &__info {
+    font-size: 2rem;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 2rem 0;
+  }
+
+  &__chooser {
+    background-color: #ffffff;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0 4rem 0;
+
+    @include tablet() {
+      flex-direction: row;
+      justify-content: center;
+      gap: 5rem;
+    }
+  }
+
+  &__site {
+    width: 10rem;
+
+    @include tablet() {
+      width: 15rem;
+    }
+  }
+
+  &__choice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #000000;
+    transition: transform 0.25s ease-in-out, color 0.25s ease-in-out;
+
+    &:hover {
+      color: #777777;
+      transform: scale(1.1);
+    }
+  }
+}
